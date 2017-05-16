@@ -1,6 +1,8 @@
-# WeHuddle
+# Le Chat Meow
 
-WeHuddle is a Ruby-On-Rails, ActionCable touting, real-time chat application targeted at agile development teams.  This project presented many interesting challenges, including getting ActionCable, a new Rails v5 feature, to implement websockets and render chat windows in real time.  Fun stuff!
+Le Chat Meow is a Ruby-On-Rails, ActionCable touting, real-time chat application targeted at agile development teams.  This project presented many interesting challenges, including getting ActionCable, a new Rails v5 feature, to implement websockets and render chat windows in real time.  Fun stuff!
+
+Originally built for agile software development teams, I reskinned this chat app from it's origin incaration, called WeHuddle, into a chat application that works specifically for cat owners who want to talk to other cat owners, while pretending to be their cats.
 
 ## Getting Started
 
