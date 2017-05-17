@@ -2,12 +2,26 @@
 
 	<% unless @chatroom.member?(current_user) %>
 		<div class="field">
-		  <%= f.text_area :content, rows: "3", data: {textarea: "message"}, placeholder: "Join the chatroom to type your message!", disabled: true %>
+		  <%= f.text_area :content, rows: "3", data: {textarea: "message"}, value: "Join the chat to type a message!", disabled: true %>
 		</div>
 	<% else %>
 		<div class="field">
-		  <%= f.text_area :content, rows: "3", data: {textarea: "message"}, placeholder: "Type your message..." %>		
+				<div class="ui secondary menu">
+						<div class="ui dropdown item">
+							<p>&#128049;</p>
+							<i class="dropdown icon"></i>
+
+							<div class="menu">
+								<div class="item icon small">
+									<div class="">&#x1f63c;</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+		  <%= f.text_area :content, rows: "3", data: {textarea: "message"}, placeholder: "Type your message..." %>
 		</div>
+
 	<% end %>
 
   <%= f.hidden_field :chatroom_id, value: chatroom.id %>

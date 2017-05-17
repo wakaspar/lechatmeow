@@ -6,29 +6,19 @@
 			<h3>About <%= @chatroom.title %> </h3>
 		<% end %>
     <% unless @chatroom.is_direct_message? || @chatroom.admin?(current_user) %>
-		  <div class="ui left pointing dropdown icon button">
+		  <div class="ui button">
         <% if @chatroom.member?(current_user) %>
-        <i class="remove user icon"></i>
+         <%= link_to memberships_users_path(@chatroom.id), method: 'delete' do %>
+          <span class="button-text"> Leave Chat </span>
+          <i class="remove user icon big"></i>
+         <% end %>
         <% else %>
-        <i class="add user icon"></i>
+          <%= link_to memberships_users_path(@chatroom.id), method: 'post' do %>
+            <span class="button-text">Join Chat</span>
+            <i class="add user icon big"></i>
+          <% end %>
         <% end %>
-		  <div class="menu">
-
-						<% unless @chatroom.member?(current_user) %>
-						 <div class="item">
-							<%= link_to memberships_users_path(@chatroom.id), method: 'post' do %>
-								<%= fa_icon "plus" %> Join Chat
-							</div>
-							<% end %>
-						<% else %>
-						<div class="item">
-							<%= link_to membership_destroy_path(@chatroom.id), method: 'delete' do %>
-								<i class="delete icon"></i> Leave
-							</div>
-							<% end %>
-						<% end %>
-			      </div>
-		    </div>
+		  </div>
     <% end %>
 	</div>
 
