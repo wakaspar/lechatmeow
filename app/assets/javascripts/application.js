@@ -15,6 +15,7 @@
 //= require time_ago.js
 //= require jquery_ujs
 //= require semantic-ui
+//= require cable
 //= require_tree .
 //= require_tree ./channels
 

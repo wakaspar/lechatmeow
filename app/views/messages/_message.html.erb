@@ -2,7 +2,7 @@
 	<div class="label">
 
 		<% if message.user.avatar.blank? %>
-      <%= image_tag("default.svg", class: "ui tiny image") %>
+      <%= image_tag("default_cat.png") %>
     <% else %>
       <%= image_tag(message.user.avatar.thumb) %>
     <% end %>

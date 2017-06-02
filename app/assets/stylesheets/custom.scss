@@ -32,7 +32,7 @@ $body-font: 'Roboto', sans-serif;
 body {
 	// Changed from white
 	background-color: $indigo;
-	color: $greymane;
+	color: $black;
 	font-family: $body-font;
 }
 
@@ -45,7 +45,7 @@ body {
 }
 
 .main {
-	min-height: 100vh;
+	margin-bottom: 50px;
 }
 
 .chat-panel {
@@ -105,12 +105,13 @@ header{
 }
 
 footer{
+	height: 50px;
+	width: 100%;
   background: $purp;
   text-align: center;
-  height: 50px;
-  display: flex;
-  align-items: center;
-
+	padding: 1%;
+  position: fixed;
+	bottom: 0px;
 }
 
 /*** Chat ***/
@@ -118,8 +119,8 @@ footer{
 .chat {
 	color: $black;
 	.message-view {
-		padding: 0 20px;
-		height: 425px;
+		padding: 5 20px;
+		height: 50vh;
 		overflow-y: scroll;
 	}
 	.message-input {
