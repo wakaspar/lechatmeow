@@ -20,12 +20,17 @@
 //= require_tree ./channels
 
 $(document).ready(function(){
+
+	// Initializes Dropdown Menu
 	$('.ui.dropdown')
   .dropdown();
 
+	// Initializes Accordion
   $('.ui.accordion')
   .accordion();
 
+
+	// Handles Flash Message Fade Animation
   $('.message .close')
   .on('click', function() {
     $(this)
@@ -33,4 +38,12 @@ $(document).ready(function(){
       .transition('fade')
     ;
   });
-});
+
+	// Chat window refresh
+	$('.chat-box').on('onhaschange', function() {
+		console.log('live your life!')
+		$(this).scrollTop();
+	});
+
+
+}); // closes $(document).ready()

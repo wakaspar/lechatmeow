@@ -16,14 +16,14 @@ $off_white: #2f3131;
 $white: #dddddd;
 $black: #000000;
 
-$greymane: #aaaaaa;
+$greymane: #bdbdbd;
 
-$purp: #9000a3;
-$indigo: #4B0082;
+$purp: #9701aa;
+$indigo: #320056;
 $dk_orchid: #9932CC;
 
 
-/* fonts */
+/* Fonts */
 $logo-font: 'Baloo', cursive;
 $heading-font: 'Open sans', sans-serif;
 $body-font: 'Roboto', sans-serif;
@@ -36,6 +36,11 @@ body {
 	font-family: $body-font;
 }
 
+input, input:onchange {
+	background: $purp;
+}
+
+
 .segment {
 	background: $purp;
 }
@@ -45,11 +50,14 @@ body {
 }
 
 .main {
-	margin-bottom: 50px;
+	// margin-bottom: 50px;
+}
+
+.images img {
+	border: 2px solid $greymane;
 }
 
 .chat-panel {
-	// Light purple panels on dark purple bg
 	color: #000000;
 	background-color: $purp;
 }
@@ -57,6 +65,16 @@ body {
 #user_email, #user_password {
 	// Login Page
 	background-color: $purp;
+}
+
+.jumbotron {
+	font-family: $logo-font;
+	font-size: 4em;
+	color: $purp;
+}
+
+.instructions {
+	color: $purp;
 }
 
 a {
@@ -92,11 +110,11 @@ a.logo:hover {
 
 /**** Typography ****/
 h1, h2, h3, h4, h5, h6 {
-	color: $black;
+	// color: $greymane;
 	font-family: $heading-font;
 }
 
-header{
+header {
 	display: flex;
   align-items: center;
 	background: $purp;
@@ -114,10 +132,17 @@ footer{
 	bottom: 0px;
 }
 
+i {
+	color: $sunshine;
+}
+
 /*** Chat ***/
 
 .chat {
-	color: $black;
+
+	h2 {
+		color: $black;
+	}
 	.message-view {
 		padding: 5 20px;
 		height: 50vh;
