@@ -14,7 +14,7 @@
 				<%= link_to room.title, chatroom_path(room) %>
 				<% if room.admin?(current_user) %>
 				<div class="ui label"><%= link_to edit_chatroom_path(room) do %>
-					<%= fa_icon "pencil" %>
+					<%= fa_icon "pencil", style: "color:#000000;" %>
 					<% end %>
 				</div>
 				<% end %>
@@ -25,7 +25,7 @@
 				<%= link_to room.title, chatroom_path(room) %>
 				<% if room.admin?(current_user) %>
 				<div class="ui label"><%= link_to edit_chatroom_path(room) do %>
-					<%= fa_icon "pencil" %>
+					<%= fa_icon "pencil", style: "color:#000000;" %>
 					<% end %>
 				</div>
 				<% end %>
@@ -35,7 +35,7 @@
 			<% end %>
 
 			<div class="ui divider"></div>
-			
+
 			<%= link_to new_chatroom_path do %>
 				<p> <i class="add circle icon"></i> Create New Chat</p>
 			<% end %>
