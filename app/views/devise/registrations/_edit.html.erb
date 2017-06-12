@@ -1,6 +1,6 @@
-<h2>Edit <%= resource_name.to_s.humanize %> Profile</h2>
-  <div class="ui form">
+<h4 class="jumbotron">Edit <%= resource_name.to_s.humanize %> Profile</h4>
 
+<div class="ui form my-form">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= devise_error_messages! %>
 
@@ -8,79 +8,67 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :avatar %><br />
-    <%= f.file_field :avatar, autofocus: true  %>
-  </div>
-
-  <div class="required field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autofocus: true  %>
-  </div>
-
-  <div class="required field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, autofocus: true %>
-  </div>
-
-
-
-     <div class="field">
-      <%= f.label :biography %> <br />
-      <%if current_user.biography.nil? %>
-        <em>Add your biography:</em>
-        <br>
-      <% end %>
-      <%= f.text_area :biography, autofocus: true  %>
+  <div class="ui row">
+    <div class="field">
+      <%= f.label :avatar %>
+      <%= f.file_field :avatar, autofocus: true  %>
     </div>
+    <br>
+  </div>
 
-    <div class="two fields">
-      <div class="required field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %>
-      </div>
-       <div class="required field">
-        <%= f.label :username %><br />
-        <%= f.text_field :username, cautofocus: true %>
-      </div>
+  <div class="two fields">
+    <div class="required field">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, autofocus: true  %>
     </div>
 
     <div class="required field">
-      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-      <%= f.password_field :current_password, autocomplete: "off" %>
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, autofocus: true %>
     </div>
-    <!-- TODO - make this work. right now the edit password path redirects you to the homepage -->
-    <!-- <div class="two fields">
-      <div class="field">
-        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-        <%= f.password_field :password, autocomplete: "off" %>
-        <% if @minimum_password_length %>
-          <br />
-          <em><%= @minimum_password_length %> characters minimum</em>
-        <% end %>
-      </div>
-      <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
-      </div>
-    </div>
+  </div>
 
+   <div class="field">
+    <%= f.label :biography %>
+    <%if current_user.biography.nil? %>
+      <em>Add your biography:</em>
+      <br>
+    <% end %>
+    <%= f.text_area :biography, autofocus: true  %>
+  </div>
+
+  <div class="two fields">
     <div class="required field">
-      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-      <%= f.password_field :current_password, autocomplete: "off" %>
-    </div> -->
-
-    <div class="actions">
-      <%= f.submit "Update" %>
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true %>
     </div>
+     <div class="required field">
+      <%= f.label :username %>
+      <%= f.text_field :username, cautofocus: true %>
+    </div>
+  </div>
+
+  <div class="ui grid row">
+    <div class="required field eight wide column">
+      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
+      <%= f.password_field :current_password, autocomplete: "off" %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <br>
+    <%= f.submit "Update" %>
+  </div>
   <% end %>
-  <br>    
-    <h3><%= link_to 'Change Password', edit_user_path %></h3>
+  <br>
+    <h3> <i class="unlock alternate icon"></i>  Click <span style="color:#FFD700;"><%= link_to 'here', edit_user_path %> </span> to change your password.</h3>
   <br>
 
   <div class="ui divider"></div>
-  <h2>Cancel Account</h2>
+
+  <h2> <i class="remove circle outline icon"></i> Cancel Account</h2>
   <p>Would you like to cancel your account? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-  <%= fa_icon "caret-left" %> <%= link_to "Back", :back %>
 </div>
+
+<span class="instructions"> <%= fa_icon "caret-left" %> <%= link_to "Back", :back %> <br /> </span>

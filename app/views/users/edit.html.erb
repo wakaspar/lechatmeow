@@ -1,30 +1,33 @@
 <div class="ui container">
-  <h3>Change Your Password</h3>
+  <h4 class="jumbotron">Change Your Password</h4>
 
-  <div class="ui form">
+  <div class="ui form my-form">
    <%= form_for(@user, :url => { :action => "update_password" } ) do |f| %>
-     <div class="required field">
-       <%= f.label :password, "New password" %><br />
-       <% if @minimum_password_length %>
+    <div class="ui grid row">
+       <div class="required field eight wide column">
+         <%= f.label :password, "New password" %><br />
+         <% if @minimum_password_length %>
          <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-       <% end %>
-       <%= f.password_field :password, :autocomplete => "off"  %>
+         <% end %>
+         <%= f.password_field :password, :autocomplete => "off"  %>
+       </div>
+
+       <div class="required field eight wide column">
+         <%= f.label :password_confirmation %><br />
+         <%= f.password_field :password_confirmation %>
+       </div>
      </div>
-     <div class="required field">
-       <%= f.label :password_confirmation %><br />
-       <%= f.password_field :password_confirmation %>
-     </div>
-     <div class="required field">
-       <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-       <%= f.password_field :current_password %>
-     </div>
-     <div class="action_container">
-       <%= f.submit %>
+
+     <div class="ui row">
+       <div class="required field eight wide column">
+         <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+         <%= f.password_field :current_password %>
+       </div>
+       <div class="action_container">
+         <%= f.submit %>
+       </div>
      </div>
    <% end %>
   </div>
-
-  <br>
-
-  <%= fa_icon "caret-left" %> <%= link_to "Back", :back %>
+  <span class="instructions"> <%= fa_icon "caret-left" %> <%= link_to "Back", :back %> </span> 
 </div>

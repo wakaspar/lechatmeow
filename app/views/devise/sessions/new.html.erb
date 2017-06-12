@@ -1,10 +1,12 @@
 <div class= "ui container">
 
-  <h4 class="jumbotron">Log in</h4>
+  <h4 class="jumbotron">Log In</h4>
+  <%= render "devise/shared/links" %>
+  <br>
 
   <div class="ui grid centered">
     <div class="ui form my-form">
-      <div class="centered">
+
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
           <%= f.label :email %>
@@ -18,7 +20,7 @@
           <%= f.submit "Log in" %>
         </div>
         <% end %>
-      </div>
+
     </div>
   </div>
 

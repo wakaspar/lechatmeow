@@ -30,15 +30,8 @@ $body-font: 'Roboto', sans-serif;
 
 
 body {
-	// Changed from white
 	background-color: $indigo;
-	color: $black;
 	font-family: $body-font;
-
-}
-
-.segment {
-	background: $purp;
 }
 
 .chatcat {
@@ -56,11 +49,6 @@ body {
 .chat-panel {
 	color: #000000;
 	background-color: $purp;
-}
-
-#user_email, #user_password {
-	// Login Page
-	// background-color: $purp;
 }
 
 .my-link {
@@ -130,12 +118,6 @@ header {
 	margin: 2%;
 }
 
-// footer {
-// 	height: 50px;
-//   background: $purp;
-//   text-align: center;
-// }
-
 footer {
   background: $purp;
   text-align: center;
@@ -152,13 +134,13 @@ i {
 	color: $sunshine;
 }
 
+.user-profile i {
+	color: #000000;
+}
+
 .menu-title {
 	font-family: $logo-font;
 	color: $sunshine;
-}
-
-hr {	
-	border-color: $indigo;
 }
 
 /*** Chat ***/

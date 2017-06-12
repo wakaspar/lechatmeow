@@ -1,12 +1,12 @@
 <div class="ui segment">
- 	<div class="chat-header">
+ 	<div class="">
 		<% if @chatroom.is_direct_message? %>
 			<h3>About this conversation </h3>
 		<% else %>
-			<h3> <i class="info circle icon"></i> <%= @chatroom.title %> </h3>
+			<h3> <i style="color: #000000;" class="info circle icon"></i> <%= @chatroom.title %> </h3>
 		<% end %>
     <% unless @chatroom.is_direct_message? || @chatroom.admin?(current_user) %>
-		  <div class="ui button">
+		  <div class="ui button secondary">
         <% if @chatroom.member?(current_user) %>
          <%= link_to memberships_users_path(@chatroom.id), method: 'delete' do %>
           <span class="button-text"> Leave Chat </span>
@@ -22,7 +22,7 @@
     <% end %>
 	</div>
 
-	<div class="ui divider"></div>
+	<div class="ui inverted divider"></div>
 
 	<div class="ui container">
 		<h4>

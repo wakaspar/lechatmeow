@@ -2,8 +2,8 @@
     <h1 class="jumbotron"><i class="comments outline icon"></i> Hey, <%= current_user.first_name %>!</h1>
     <h3 class="instructions">Welcome to Le Chat Meow!  Select a room to be a chatty cat...</h3>
     <li class="instructions">Your last login was TODO</li>
-    <li class="instructions">Click here (TODO) to go to your user profile.</li>
-    <li class="instructions">Click here (TODO) to make a new chatroom.</li>
+    <li class="instructions">Click  <span style="color:#FFD700;"> <%= link_to 'here', user_path(current_user.id) %> </span> to go to your user profile.</li>
+    <li class="instructions">Click <span style="color:#FFD700;"> <%= link_to 'here', new_chatroom_path %> </span> to make a new chatroom.</li>
     <br>
     <h1 class="jumbotron"> <i class="sitemap icon"></i> Getting Started</h1>
     <h3 class="instructions"> You can chose a pre-existing room, or make your own.  Click the pics below for more info...</h3>

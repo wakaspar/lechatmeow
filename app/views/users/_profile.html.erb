@@ -1,4 +1,4 @@
-<div class="ui two column grid horizontal segments">
+<div class="ui two column grid horizontal segments user-profile">
   <div class="ui segment four wide column">
     <% if @user.avatar.blank? %>
       <%= image_tag("default.svg", class: "ui medium image") %>
@@ -25,7 +25,7 @@
     <div class="ui accordion">
       <div class="title">
         <i class="dropdown icon"></i>
-        <%= fa_icon "commenting-o" %> Active Chats</h2>
+        <%= fa_icon "commenting-o"%> Active Chats</h2>
       </div>
       <div class="content">
         <div class="ui secondary vertical menu">
