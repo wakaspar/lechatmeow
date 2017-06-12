@@ -1,20 +1,25 @@
 <div class= "ui container">
-  <h2>Log in</h2>
-  <div class="ui form">
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="field eight wide column">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, class: "input-field" %>
-      </div>
 
-      <div class="field eight wide column">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
-      </div>
+  <h2 class="jumbotron">Log in</h2>
 
-      <div class="actions">
-        <%= f.submit "Log in" %>
+  <div class="ui grid centered">
+    <div class="ui form my-form">
+      <div class="centered">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field">
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true, class: "input-field" %>
+        </div>
+        <div class="field">
+          <%= f.label :password %>
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Log in" %>
+        </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
+
 </div>

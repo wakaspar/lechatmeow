@@ -36,11 +36,6 @@ body {
 	font-family: $body-font;
 }
 
-input, input:onchange {
-	background: $purp;
-}
-
-
 .segment {
 	background: $purp;
 }
@@ -64,7 +59,11 @@ input, input:onchange {
 
 #user_email, #user_password {
 	// Login Page
-	background-color: $purp;
+	// background-color: $purp;
+}
+
+.my-link {
+	color: $sunshine;
 }
 
 .jumbotron {
@@ -122,12 +121,19 @@ header {
 	margin-bottom: 20px;
 }
 
+.my-form {
+	background: $purp;
+	border-radius: 5%;
+	padding: 2%;
+	margin: 2%;
+}
+
 footer{
 	height: 50px;
 	width: 100%;
   background: $purp;
   text-align: center;
-	padding: 1%;
+	padding: 1.3%;
   position: fixed;
 	bottom: 0px;
 }
@@ -145,7 +151,7 @@ i {
 	}
 	.message-view {
 		padding: 5 20px;
-		height: 50vh;
+		height: 37vh;
 		overflow-y: scroll;
 	}
 	.message-input {

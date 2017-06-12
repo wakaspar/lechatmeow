@@ -31,10 +31,6 @@ Rails.application.configure do
   # config.action_cable.url = 'wss://lechatmeow.herokuapp.com/cable'
   config.action_cable.allowed_request_origins = ['https://lechatmeow.herokuapp.com', 'http://lechatmeow.herokuapp.com']
 
-
-
-
-
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
 
