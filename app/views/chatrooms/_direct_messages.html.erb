@@ -1,8 +1,12 @@
-<div class="">
-  <h3 class="nav-title">Direct Messages</h3>
-  <div class="ui vertical menu">
-    <% other_users.each do |user| %>
-    <%= link_to user.first_name + " " + user.last_name, direct_message_path(user.id), data: {behavior: "chatroom-link", chatroom_id: Chatroom.direct_message_for_users([current_user, user]).id }, class: "item nav-content" %>
-    <% end %>
-  </div>
+<div class="ui accordion">
+	<div class="title">
+		<h3><i class="user icon"></i>Direct Messages</h3>
+	</div>
+	<div class="content">
+		<div class="ui secondary vertical menu">
+      <% other_users.each do |user| %>
+      <%= link_to user.first_name + " " + user.last_name, direct_message_path(user.id), data: {behavior: "chatroom-link", chatroom_id: Chatroom.direct_message_for_users([current_user, user]).id }, class: "item nav-content" %>
+      <% end %>
+		</div>
+	</div>
 </div>

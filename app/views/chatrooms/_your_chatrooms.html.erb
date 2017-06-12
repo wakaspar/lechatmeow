@@ -1,38 +1,38 @@
-<div class="">
-	<h3 class="nav-title">Your Chatrooms
-		<%= link_to new_chatroom_path do %>
-		<%= fa_icon "plus" %>
-		<% end %>
-	</h3>
+<div class="ui accordion">
+	<div class="title">
+		<h3 class="nav-title"> <i class="users icon"></i> Your Chatrooms
+		</h3>
+	</div>
 
-	<div class="ui vertical pointing menu">
+	<div class="content">
+		<div class="ui secondary vertical menu">
+			<% current_user.chatrooms.each do |room| %>
+			<% unless room.is_direct_message? %>
 
-		<% current_user.chatrooms.each do |room| %>
-		<% unless room.is_direct_message? %>
+			<% if current_page == room.id %>
+			<div class="active item">
+				<%= link_to room.title, chatroom_path(room) %>
+				<% if room.admin?(current_user) %>
+				<div class="ui label"><%= link_to edit_chatroom_path(room) do %>
+					<%= fa_icon "pencil" %>
+					<% end %>
+				</div>
+				<% end %>
+			</div>
 
-		<% if current_page == room.id %>
-		<div class="active item">
-			<%= link_to room.title, chatroom_path(room) %>
-			<% if room.admin?(current_user) %>
-			<div class="ui label"><%= link_to edit_chatroom_path(room) do %>
-				<%= fa_icon "pencil" %>
+			<% else %>
+			<div class="item">
+				<%= link_to room.title, chatroom_path(room) %>
+				<% if room.admin?(current_user) %>
+				<div class="ui label"><%= link_to edit_chatroom_path(room) do %>
+					<%= fa_icon "pencil" %>
+					<% end %>
+				</div>
 				<% end %>
 			</div>
 			<% end %>
-		</div>
-
-		<% else %>
-		<div class="item">
-			<%= link_to room.title, chatroom_path(room) %>
-			<% if room.admin?(current_user) %>
-			<div class="ui label"><%= link_to edit_chatroom_path(room) do %>
-				<%= fa_icon "pencil" %>
-				<% end %>
-			</div>
+			<% end %>
 			<% end %>
 		</div>
-		<% end %>
-		<% end %>
-		<% end %>
 	</div>
 </div>

@@ -1,15 +1,25 @@
 <header>
   <div class="ui container">
-    <div class="ui stackable grid">
-      <div class="four wide column">
-       <h1> <%= image_tag("cat.png", class: "chatcat") %> <%= link_to 'Le Chat Meow', root_path, class: "logo" %></h1>
+    <div class="ui stackable">
+      <div class="six wide column">
+       <h1><%= link_to 'Le Chat Meow', root_path, class: "logo" %></h1>
       </div>
 
-      <nav class="ten wide column">
+      <nav class="four wide column">
+
+
         <div class="ui secondary menu">
-          <% if user_signed_in? %>            
+          <% if user_signed_in? %>
+
+            <div class="ui right item">
+              <%= link_to new_chatroom_path do %>
+                <p> <i class="add circle icon"></i> Create New Chat</p>
+              <% end %>
+            </div>
 
             <div class="ui right dropdown item">
+
+
               <%= current_user.first_name %>
               <i class="dropdown icon"></i>
               <div class="menu">

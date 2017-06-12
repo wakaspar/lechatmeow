@@ -1,6 +1,6 @@
 <div class="ui container">
-  <div class="ui form">
-    <h3>Create A New Chatroom</h3>
+  <h4 class="jumbotron">Create New Chat</h4>
+  <div class="ui form my-form">
     <% provide(:button_text, 'Create') %>
     <%= form_for @chatroom, html: { multipart: true }, id: "new_chatroom" do |f| %>
     <%= f.hidden_field :admin, value: current_user.id %>

@@ -3,19 +3,19 @@
 		<% if @chatroom.is_direct_message? %>
 			<h3>About this conversation </h3>
 		<% else %>
-			<h3>About <%= @chatroom.title %> </h3>
+			<h3> <i class="info circle icon"></i> <%= @chatroom.title %> </h3>
 		<% end %>
     <% unless @chatroom.is_direct_message? || @chatroom.admin?(current_user) %>
 		  <div class="ui button">
         <% if @chatroom.member?(current_user) %>
          <%= link_to memberships_users_path(@chatroom.id), method: 'delete' do %>
           <span class="button-text"> Leave Chat </span>
-          <i class="remove user icon big"></i>
+          <i class="remove user icon big clickable"></i>
          <% end %>
         <% else %>
           <%= link_to memberships_users_path(@chatroom.id), method: 'post' do %>
             <span class="button-text">Join Chat</span>
-            <i class="add user icon big"></i>
+            <i class="add user icon big clickable"></i>
           <% end %>
         <% end %>
 		  </div>
@@ -26,7 +26,7 @@
 
 	<div class="ui container">
 		<h4>
-			Chatroom Details:
+			Chatroom Description:
 		</h4>
 		<% if @chatroom.is_direct_message? %>
 			<p>This is a direct message.</p>
@@ -35,7 +35,7 @@
 			<p><%= @chatroom.description %></p>
 		<% end %>
     <br>
-    <strong> Members: </strong>
+    <h4> Current Members: </h4>
     <% @users.each do |user| %>
       <% if user.member?(@chatroom) %>
         <p><%= user.first_name %></p>
