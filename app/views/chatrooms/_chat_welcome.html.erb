@@ -1,22 +1,22 @@
 <div class="ui container">
     <h1 class="jumbotron"><i class="comments outline icon"></i> Hey, <%= current_user.first_name %>!</h1>
     <h3 class="instructions">Welcome to Le Chat Meow!  Select a room to be a chatty cat...</h3>
-    <li class="instructions">Your last login was TODO</li>
-    <li class="instructions">Click  <span style="color:#FFD700;"> <%= link_to 'here', user_path(current_user.id) %> </span> to go to your user profile.</li>
-    <li class="instructions">Click <span style="color:#FFD700;"> <%= link_to 'here', new_chatroom_path %> </span> to make a new chatroom.</li>
+    <li class="instructions">Your last login was **TODO**</li>
+    <li class="instructions">Click  <span style="color:#FFD700;"> <%= link_to 'here', user_path(current_user.id) %> </span> to check out your user profile.</li>
+    <li class="instructions">Feelin' sassy?  Click <span style="color:#FFD700;"> <%= link_to 'here', new_chatroom_path %> </span> to make a new chatroom.</li>
     <br>
     <h1 class="jumbotron"> <i class="sitemap icon"></i> Getting Started</h1>
-    <h3 class="instructions"> You can chose a pre-existing room, or make your own.  Click the pics below for more info...</h3>
+    <h3 class="instructions"> You can chose a pre-existing room, or make your own.  Check below for more.</h3>
 
 
   <div class="ui grid small images">
-    <div class="four wide column" data-variation="rounded" data-title="New Chatrooms" data-tooltip="Create and navigate with the left sidebar." data-position="bottom left">
+    <div class="four wide column" data-variation="rounded" data-title="New Chatrooms" data-tooltip="Navigate with the left sidebar." data-position="top center">
       <%= image_tag("lcm1.png", class:"ui image") %>
     </div>
-    <div class="four wide column" data-variation="rounded" data-title="Join A Chat" data-tooltip="Join / Leave / View a chat with the right sidebar." data-position="bottom left">
+    <div class="four wide column" data-variation="rounded" data-title="Join A Chat" data-tooltip="Join / Leave / View a chat with the right sidebar." data-position="top center">
       <%= image_tag("lcm2.png", class:"ui image") %>
     </div>
-    <div class="four wide column" data-variation="rounded" data-title="Be Your Cat!" data-tooltip="Chat as your cat!" data-position="bottom left">
+    <div class="four wide column" data-variation="rounded" data-title="Be Your Cat!" data-tooltip="Chat as your cat!" data-position="top center">
       <%= image_tag("lcm3.png", class:"ui image") %>
     </div>
 
