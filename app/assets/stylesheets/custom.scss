@@ -10,15 +10,15 @@ $sunshine: #FFD700;
 $steel-blue: #2A779B;
 
 // Le Chat colors
-$bone: #f8f1e5;
+$bone: #e8e8e8;
 $coal: #374341;
 $off_white: #2f3131;
 $white: #dddddd;
 $black: #000000;
 
-$greymane: #bdbdbd;
+$greymane: #c7c7c7;
 
-$purp: #9701aa;
+$purp: #570096;
 $indigo: #320056;
 $dk_orchid: #9932CC;
 
@@ -30,8 +30,9 @@ $body-font: 'Roboto', sans-serif;
 
 
 body {
-	background-color: $indigo;
+	background-color: $bone;
 	font-family: $body-font;
+	height: 101vh;
 }
 
 .main {
@@ -39,12 +40,7 @@ body {
 }
 
 .images img {
-	border: 2px solid $greymane;
-}
-
-.chat-panel {
-	color: #000000;
-	background-color: $purp;
+	border: 2px solid $bone;
 }
 
 .my-link {
@@ -54,7 +50,7 @@ body {
 .jumbotron {
 	font-family: $logo-font;
 	font-size: 4em;
-	color: $purp;
+	color: $indigo;
 }
 
 .instructions {
@@ -62,7 +58,7 @@ body {
 }
 
 a {
-	color: inherit;
+	// color: inherit;
 }
 
 .logo {
@@ -71,21 +67,32 @@ a {
 }
 
 a.logo:hover {
-  color: $dk_orchid;
+  color: $purp;
 }
 
+
 .left-sidebar {
+	height: 100%;
+	background-color: $purp;
+	text-align: center;
+
+	a {
+		color: $bone;
+
+		:hover {
+			color: white;
+		}
+	}
 
 	h3 {
 		color: $greymane;
 		padding: 10px 5px 0px;
 	}
 
-	text-align: center;
-
 	.ui.accordion {
 		margin:	15px 3px 5px;
 	}
+
 	.menu {
 		width: 100% !important;
 	}
@@ -101,10 +108,10 @@ h1, h2, h3, h4, h5, h6 {
 header {
 	display: flex;
   align-items: center;
-	background: $purp;
+	background: $indigo;
 	height: 90px;
 	padding: 2%;
-	margin-bottom: 2.5%;
+	margin-bottom: 1%;
 }
 
 .my-form {
@@ -115,14 +122,14 @@ header {
 }
 
 footer {
-  background: $purp;
+  background: $indigo;
   text-align: center;
 	padding: 1.3%;
   height: 50px;
   display: flex;
   align-items: center;
 	position: fixed;
-	margin-top: 75px;
+	// margin-top: 75px;
 	width: 100%;
 	bottom: 0px;
 }
@@ -135,10 +142,7 @@ i {
 	color: #000000;
 }
 
-.menu-title {
-	font-family: $logo-font;
-	color: $sunshine;
-}
+
 
 /*** Chat ***/
 
@@ -148,8 +152,8 @@ i {
 		color: $black;
 	}
 	.message-view {
-		padding: 5 20px;
-		height: 37vh;
+		padding: 5px;
+		height: 50vh;
 		overflow-y: scroll;
 	}
 	.message-input {

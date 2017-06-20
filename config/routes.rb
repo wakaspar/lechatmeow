@@ -7,9 +7,11 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#show', as: 'user'
 
   delete '/chatrooms/:id', to: 'chatrooms#destroy', as: 'chatroom_delete'
+  delete '/cats/:id', to: 'cats#destroy', as: 'cat_delete'
 
+  resources :cats
+  resources :direct_messages
   resources :chatrooms, except: [:destroy]
-
   resources :messages, only: [:create, :new, :show]
 
   resource :user, only: [:edit] do
@@ -21,7 +23,6 @@ Rails.application.routes.draw do
   get '/users/:user_id/chatrooms', to: 'memberships#index', as: 'users_memberships'
   post '/chatrooms/:chatroom_id/users', to: 'memberships#create', as: 'memberships_users'
   delete '/chatrooms/:chatroom_id/users', to: 'memberships#destroy', as: 'membership_destroy'
-  resources :direct_messages
 
   ## 404 ##
 

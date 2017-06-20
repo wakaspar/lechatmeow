@@ -16,11 +16,16 @@
                 <p> <i class="add circle icon"></i> Create New Chat</p>
               <% end %>
             </div>
+            <div class="ui right item">
+              <%= link_to new_cat_path do %>
+                <p> <i class="paw icon"></i> Make A New Cat</p>
+              <% end %>
+            </div>
 
             <div class="ui right dropdown item">
 
 
-              <%= current_user.first_name %>
+              <span style="color:#1E90FF;">  <%= current_user.first_name %> </span>
               <i class="dropdown icon"></i>
               <div class="menu">
                 <div class="item">

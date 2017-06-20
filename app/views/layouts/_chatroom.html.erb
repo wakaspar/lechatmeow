@@ -1,19 +1,26 @@
 <div class="ui stackable grid">
-	<aside class="left-sidebar four wide column">
-		<div class="chat-panel ui segments">
-			<h1 class="menu-title">Le Menu <i class="talk icon"></i></h1>
+	<aside class="four wide column">
+		<div class="ui segments left-sidebar">
+
+			<h1 class="logo">Le Menu 	</h1>
+
 			<div>
-			<%= render 'chatrooms/your_chatrooms' %>
+				<%= render 'chatrooms/your_chatrooms' %>
 			</div>
+
 			<div class="ui divider"></div>
+
 			<div>
-			<%= render 'chatrooms/direct_messages' %>
+				<%= render 'chatrooms/direct_messages' %>
 			</div>
+
 			<div class="ui divider"></div>
+
 			<div>
-			<%= render 'chatrooms/all_chatrooms' %>
+				<%= render 'chatrooms/all_chatrooms' %>
 			</div>
 		</div>
+
 	</aside>
 
 	<div class="twelve wide column">

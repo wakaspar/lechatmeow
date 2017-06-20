@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
+
   before_action :authenticate_user!
+
   def show
   	@user = User.find_by_id(params[:id])
     @memberships = @user.memberships
@@ -7,7 +9,7 @@ class UsersController < ApplicationController
     @chatrooms = Chatroom.all
     #includes method for eager loading
     @chatroom = Chatroom.includes(:messages).find_by(id: params[:id])
-
+    @cats = Cat.where(user_id: params[:id])
     #allows new messages to be created
     @message = Message.new
   end

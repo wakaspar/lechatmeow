@@ -13,7 +13,7 @@
 			<div class="active item">
 				<%= link_to room.title, chatroom_path(room) %>
 				<% if room.admin?(current_user) %>
-				<div class="ui label"><%= link_to edit_chatroom_path(room) do %>
+				<div class="ui label currently-active-chat"><%= link_to edit_chatroom_path(room) do %>
 					<%= fa_icon "pencil", style: "color:#000000;" %>
 					<% end %>
 				</div>

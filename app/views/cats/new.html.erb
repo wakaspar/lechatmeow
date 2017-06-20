@@ -1,0 +1,49 @@
+<div class="ui container">
+  <h4 class="jumbotron">Make A New Cat</h4>
+  <div class="ui form my-form">
+    <% provide(:button_text, 'Create') %>
+    <%= form_for @cat do |f| %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+
+    <div class="two fields">
+      <div class="required field">
+        <%= f.label :name, "Cat's Name" %>
+        <%= f.text_field :name, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :cavavatar, "Cavatar (your cat's avatar)" %>
+        <%= f.file_field :cavatar %>
+      </div>
+    </div>
+
+
+    <div class="two fields">
+      <div class="field">
+        <%= f.label :breed, "Cat's Breed" %>
+        <%= f.text_field :breed %>
+      </div>
+
+      <div class="field">
+        <%= f.label :fav_toy, "Cat's Favorite Toy" %>
+        <%= f.text_field :fav_toy %>
+      </div>
+    </div>
+
+
+    <div class="field column three wide">
+      <%= f.label :age, "Cat's Age (in years)" %>
+      <%= f.number_field :age %>
+    </div>
+
+    <br>
+
+    <div class="field">
+      <%= f.submit yield(:button_text) %>
+      <% end %>
+    </div>
+  </div>
+
+  <span class="instructions"> <%= fa_icon "caret-left" %> <%= link_to "Back", :back %> <br /> </span>
+
+</div>

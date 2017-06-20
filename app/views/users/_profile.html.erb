@@ -1,45 +1,61 @@
-<div class="ui two column grid horizontal segments user-profile">
-  <div class="ui segment four wide column">
-    <% if @user.avatar.blank? %>
+<div class="ui container">
+
+  <div class="ui two column grid horizontal segments user-profile">
+    <div class="ui segment four wide column">
+      <% if @user.avatar.blank? %>
       <%= image_tag("default.svg", class: "ui medium image") %>
-    <% else %>
+      <% else %>
       <%= image_tag("#{@user.avatar}", class: "ui medium image") %>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
 
 
-  <div class="ui segment column">
-    <h2 class="profile-name"><%= @user.first_name %> <%= @user.last_name %></h2>
-    <br>
+    <div class="ui segment column">
+      <h1 class="profile-name"><%= @user.first_name %> <%= @user.last_name %>'s User Profile</h1>
+      <br>
 
-    <h2><%= fa_icon "user-circle-o" %> Bio</h2>
-    <p><%= @user.biography %></p>
-    <% if @user == current_user %>
-      <%= fa_icon "pencil" %> <%= link_to 'Edit Profile', edit_user_registration_path %>
-    <% else %><% end %>
-
-    <h2><%= fa_icon "envelope" %> Contact</h2>
-    <p>Email: <%= @user.email %></p>
-    <p>Username: <%= @user.username %></p>
-
-    <div class="ui accordion">
-      <div class="title">
-        <i class="dropdown icon"></i>
-        <%= fa_icon "commenting-o"%> Active Chats</h2>
-      </div>
-      <div class="content">
-        <div class="ui secondary vertical menu">
-          <% @chatrooms.each do |room| %>
-            <% unless room.is_direct_message? %>
-              <% if room.member?(@user) %>
-                <%= link_to room.title, chatroom_path(room), class: "item nav-content" %>
-              <% end %>
+      <div class="ui accordion">
+        <div class="title">
+          <h2> <i class="dropdown icon"></i> <%= fa_icon "paw"%> Current Cats </h2>
+        </div>
+        <div class="content">
+          <div class="ui secondary vertical menu">
+            <% @cats.each do |cat| %>
+            <%= link_to cat.name, cat_path(cat), class: "item nav-content" %>
             <% end %>
-          <% end %>
+          </div>
         </div>
       </div>
+
+      <h2><%= fa_icon "user-circle-o" %> Bio</h2>
+      <p><%= @user.biography %></p>
+      <% if @user == current_user %>
+      <%= fa_icon "pencil" %> <%= link_to 'Edit Profile', edit_user_registration_path %>
+      <% else %><% end %>
+
+      <h2><%= fa_icon "envelope" %> Contact</h2>
+      <p>Email: <%= @user.email %></p>
+      <p>Username: <%= @user.username %></p>
+
+      <div class="ui accordion">
+        <div class="title">
+          <h2> <i class="dropdown icon"></i> <%= fa_icon "commenting-o"%> Active Chats </h2>
+        </div>
+        <div class="content">
+          <div class="ui secondary vertical menu">
+            <% @chatrooms.each do |room| %>
+            <% unless room.is_direct_message? %>
+            <% if room.member?(@user) %>
+            <%= link_to room.title, chatroom_path(room), class: "item nav-content" %>
+            <% end %>
+            <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+
     </div>
   </div>
-
 
 </div>
